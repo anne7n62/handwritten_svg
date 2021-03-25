@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Astro Candle</title>
+
+    <style>
+
+        .handwritten2 .mask2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+}
+
+@keyframes strokeOffset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#mask2-m {
+  animation: strokeOffset 0.2s linear forwards;
+}
+#mask2-ak-ak {
+  animation: strokeOffset 0.2s linear forwards 0.2s;
+}
+#mask2-ak-line {
+  animation: strokeOffset 0.2s linear forwards 0.4s;
+}
+#mask2-e {
+  animation: strokeOffset 0.2s linear forwards 0.6s;
+}
+#mask2-y {
+  animation: strokeOffset 0.2s linear forwards 0.8s;
+}
+#mask2-u {
+  animation: strokeOffset 0.2s linear forwards 1s;
+}
+#mask2-o {
+  animation: strokeOffset 0.2s linear forwards 1.2s;
+}
+#mask2-r {
+  animation: strokeOffset 0.2s linear forwards 1.4s;
+}
+
+#mask2-oo {
+  animation: strokeOffset 0.2s linear forwards 1.6s;
+}
+#mask2-w {
+  animation: strokeOffset 0.2s linear forwards 1.8s;
+}
+#mask2-n {
+  animation: strokeOffset 0.2s linear forwards 2s;
+}
+    </style>
+</head>
+
+
+<body>
+    <div id="makeyourown"></div>
+
+    <div id="handmade scents"></div>
+
+
+
+   <script> 
+
+window.addEventListener("DOMContentLoaded", load);
+
+async function load() {
+  let response = await fetch("handwritten2.svg");
+  let mySvgData = await response.text();
+  document.querySelector("#makeyourown").innerHTML = mySvgData;
+  makeyourown();
+}
+
+function makeyourown(){
+   const masks2 = ['m', 'ak-ak', 'ak-line', 'e', 'y', 'o', 'u', 'r', 'oo', 'w', 'n']
+
+
+masks2.forEach((mask2, index, el) => {
+    const id = `#mask2-${mask2}`
+    let path = document.querySelector(id)
+    const length = path.getTotalLength()
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+})
+}
+
+</script>
+    </body>
+    </html>
