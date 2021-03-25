@@ -9,7 +9,7 @@
 
     <style>
 
-        .handwritten2 .mask2 {
+        .handwritten3 .mask3 {
         fill: none;
         stroke: #fff;
         stroke-miterlimit: 10;
@@ -21,39 +21,49 @@
   }
 }
 
-#mask2-m {
+#mask3-h {
   animation: strokeOffset 0.2s linear forwards;
 }
-#mask2-ak-ak {
+#mask3-an {
   animation: strokeOffset 0.2s linear forwards 0.2s;
 }
-#mask2-ak-line {
+#mask3-d {
   animation: strokeOffset 0.2s linear forwards 0.4s;
 }
-#mask2-e {
+#mask3-m {
   animation: strokeOffset 0.2s linear forwards 0.6s;
 }
-#mask2-y {
+#mask3-a {
   animation: strokeOffset 0.2s linear forwards 0.8s;
 }
-#mask2-u {
+#mask3-dd {
   animation: strokeOffset 0.2s linear forwards 1s;
 }
-#mask2-o {
+#mask3-e {
   animation: strokeOffset 0.2s linear forwards 1.2s;
 }
-#mask2-r {
+#mask3-s {
   animation: strokeOffset 0.2s linear forwards 1.4s;
 }
 
-#mask2-oo {
+#mask3-c {
   animation: strokeOffset 0.2s linear forwards 1.6s;
 }
-#mask2-w {
+#mask3-ee {
   animation: strokeOffset 0.2s linear forwards 1.8s;
 }
-#mask2-n {
+#mask3-n {
   animation: strokeOffset 0.2s linear forwards 2s;
+}
+#mask3-t-t {
+  animation: strokeOffset 0.2s linear forwards 2.2s;
+}
+
+#mask3-t-line {
+  animation: strokeOffset 0.2s linear forwards 2.4s;
+}
+#mask3-ss {
+  animation: strokeOffset 0.2s linear forwards 2.6s;
 }
     </style>
 </head>
@@ -61,9 +71,8 @@
 
 <body>
 
-  <a href="handwritten3.html">handmade</a>
+    <div id="handmadescents"></div>
 
-    <div id="makeyourown"></div>
 
 
    <script> 
@@ -71,18 +80,18 @@
 window.addEventListener("DOMContentLoaded", load);
 
 async function load() {
-  let response = await fetch("handwritten2.svg");
+  let response = await fetch("handwritten3.svg");
   let mySvgData = await response.text();
-  document.querySelector("#makeyourown").innerHTML = mySvgData;
-  makeyourown();
+  document.querySelector("#handmadescents").innerHTML = mySvgData;
+  handmade();
 }
 
-function makeyourown(){
-   const masks2 = ['m', 'ak-ak', 'ak-line', 'e', 'y', 'o', 'u', 'r', 'oo', 'w', 'n']
+function handmade(){
+   const masks3 = ['h', 'an', 'n', 'd', 'm', 'a', 'dd', 'e', 's', 'c', 'ee', 'n','t-t','t-line','ss']
 
 
-masks2.forEach((mask2, index, el) => {
-    const id = `#mask2-${mask2}`
+masks3.forEach((mask3, index, el) => {
+    const id = `#mask3-${mask3}`
     let path = document.querySelector(id)
     const length = path.getTotalLength()
     path.style.strokeDasharray = length;
